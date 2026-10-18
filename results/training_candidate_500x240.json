@@ -1,0 +1,43 @@
+{
+  "candidate_model": "models/visual_policy_candidate_500x240.npz",
+  "status": "experimental_not_promoted",
+  "training": {
+    "environment": "WSL2 Ubuntu, Python 3.12.3, NumPy 1.26.4, Pillow 10.4.0",
+    "seed": 3030,
+    "teacher_episodes": 500,
+    "samples": 56416,
+    "epochs": 240,
+    "initial_mse": 0.1370205134153366,
+    "final_mse": 0.019834881648421288,
+    "teacher_outcomes": {
+      "success": 441,
+      "captured": 27,
+      "obstacle_collision": 4,
+      "timeout": 28
+    }
+  },
+  "evaluations": {
+    "seed_5000_30": {
+      "weight_0_10_success": 28,
+      "weight_0_10_episodes": 30,
+      "weight_0_25_success": 27,
+      "weight_0_25_episodes": 30,
+      "weight_1_0_success": 23,
+      "weight_1_0_episodes": 30
+    },
+    "seed_777_200": {
+      "weight_0_10_success": 173,
+      "episodes": 200,
+      "rates": {
+        "success": 0.865,
+        "captured": 0.08,
+        "obstacle_collision": 0.04,
+        "out_of_bounds": 0.0,
+        "timeout": 0.015
+      },
+      "mean_steps": 70.305,
+      "episode_log": "results/candidate_500x240_weight_010_seed777.json"
+    }
+  },
+  "note": "The expanded demonstration set lowered training MSE but did not materially improve held-out success. This candidate is not the delivered model."
+}

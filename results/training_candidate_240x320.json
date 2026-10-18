@@ -1,0 +1,41 @@
+{
+  "candidate_model": "models/visual_policy_candidate_240x320.npz",
+  "status": "experimental_not_promoted",
+  "training": {
+    "environment": "WSL2 Ubuntu, Python 3.12.3, NumPy 1.26.4, Pillow 10.4.0",
+    "seed": 2030,
+    "teacher_episodes": 240,
+    "samples": 19247,
+    "epochs": 320,
+    "initial_mse": 0.1436825543642044,
+    "final_mse": 0.024644838646054268,
+    "teacher_outcomes": {
+      "success": 203,
+      "captured": 22,
+      "obstacle_collision": 8,
+      "timeout": 7
+    }
+  },
+  "evaluations": {
+    "seed_5000_30": {
+      "mlp_weight_0_25_success": 27,
+      "mlp_weight_0_25_episodes": 30,
+      "mlp_weight_1_0_success": 21,
+      "mlp_weight_1_0_episodes": 30
+    },
+    "seed_777_200": {
+      "baseline_fused_weight_0_25_success": 172,
+      "candidate_fused_weight_0_25_success": 173,
+      "episodes": 200,
+      "candidate_rates": {
+        "success": 0.865,
+        "captured": 0.075,
+        "obstacle_collision": 0.04,
+        "out_of_bounds": 0.0,
+        "timeout": 0.02
+      },
+      "candidate_mean_steps": 70.01
+    }
+  },
+  "note": "This candidate improves the 200-layout success count by one and is below the requested 92% target. Keep the existing visual_policy.npz as the delivered model until a stronger candidate is validated."
+}
